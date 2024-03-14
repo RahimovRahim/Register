@@ -1,32 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Pronia2.Models;
 using Pronia2.ViewModels;
-using Microsoft.EntityFrameworkCore;
-using Pronia2.Contexts;
-using Pronia2.Models;
 
 
 
-namespace Pronia2.Controllers
+
+namespace Pronia2.Controllers;
+public class UserController : Controller
 {
-    public class UserController : Controller
+    private readonly UserManager<AppUser> _userManager;
+
+    public UserController(UserManager<AppUser> userManager)
     {
-        private readonly UserManager<AppUser> _userManager;
+        _userManager = userManager;
+    }
 
-        public UserController(UserManager<AppUser> userManager)
-        {
-            _userManager = userManager;
-        }
-
-        public IActionResult Register()
-        {
-            return View();
-        }
+    public IActionResult Register()
+    {
+        return View();
     }
 
     [HttpPost]
@@ -39,7 +31,7 @@ namespace Pronia2.Controllers
             return View();
         }
 
-        
+
 
         AppUser appUser = new AppUser()
         {
@@ -58,8 +50,7 @@ namespace Pronia2.Controllers
 
             return View();
         }
-           
-            return RedirectToAction("Index", "Home");
-        }
-    }
 
+        return RedirectToAction("Index", "Home");
+    }
+}
