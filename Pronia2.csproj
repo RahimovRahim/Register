@@ -12,6 +12,7 @@
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.27" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="6.0.27" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.27" />
   </ItemGroup>
   <ItemGroup>
@@ -31,6 +32,7 @@
     <None Remove="Areas\Admin\Views\Shipping\" />
     <None Remove="Areas\Admin\Views\Shared\" />
     <None Remove="Areas\Admin\ViewModels\" />
+    <None Remove="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
@@ -52,6 +54,7 @@
     <Folder Include="Areas\Admin\Views\Shared\" />
     <Folder Include="wwwroot\adminAssets\" />
     <Folder Include="Areas\Admin\ViewModels\" />
+    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />
